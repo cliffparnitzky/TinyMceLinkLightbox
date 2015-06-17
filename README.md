@@ -3,7 +3,7 @@
 [![Installations via composer total](http://img.shields.io/packagist/dt/cliffparnitzky/tiny-mce-link-lightbox.svg?style=flat)](https://packagist.org/packages/cliffparnitzky/tiny-mce-link-lightbox)
 
 Contao Extension: TinyMceLinkLightbox
-=========================================
+=====================================
 
 Special TinyMCE plugin to set the rel attribute in the link dialog for opening links in a lightbox.
 
