@@ -23,30 +23,35 @@
  * PHP version 5
  * @copyright  Cliff Parnitzky 2015-2015
  * @author     Cliff Parnitzky
- * @package    TinyMceImageEnhancement
+ * @package    TinyMceLinkLightbox
  * @license    LGPL
  */
 
 /**
  * Run in a custom namespace, so the class can be replaced
  */
-namespace TinyMceImageEnhancement;
+namespace TinyMceLinkLightbox;
 
 /**
-* Class TinyMceImageEnhancement
+* Class TinyMceLinkLightbox
 *
 * Class to implement the HOOK for adding configs.
 * @copyright  Cliff Parnitzky 2015-2015
 * @author     Cliff Parnitzky
 */
-class TinyMceImageEnhancement {
+class TinyMceLinkLightbox {
 	
 	/**
 	 * Adding config for output behavoir
 	 */
 	public function editTinyMcePluginLoaderConfig ($arrTinyConfig) {
-		$arrTinyConfig["image_advtab"] = 'true,';
-		$arrTinyConfig["image_title"] = 'true,';
+		$arrTinyConfig["rel_list"] = <<<EOT
+  [
+    {title: "None", value: ""},
+    {title: "{$GLOBALS['TL_LANG']['MSC']['TinyMceLinkLightbox']['lightbox_single']}", value: "lightbox"},
+    {title: "{$GLOBALS['TL_LANG']['MSC']['TinyMceLinkLightbox']['lightbox_multi']}", value: "lightbox[multi]"}
+  ],
+EOT;
 
 		return $arrTinyConfig;
 	}
